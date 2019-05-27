@@ -2,4 +2,8 @@
 
 [![Build Status](https://travis-ci.org/illdv/project-lvl1-s508.svg?branch=master)](https://travis-ci.org/illdv/project-lvl1-s508)
 
+brain-even:
 [![asciicast](https://asciinema.org/a/oNp00MktduRhqlkWc1sFCGy2U.svg)](https://asciinema.org/a/oNp00MktduRhqlkWc1sFCGy2U)
+
+brain-calc
+[![asciicast](https://asciinema.org/a/Hjtkm1GIDHay9loEKtmhnMjIM.svg)](https://asciinema.org/a/Hjtkm1GIDHay9loEKtmhnMjIM)
