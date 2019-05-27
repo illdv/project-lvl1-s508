@@ -2,7 +2,7 @@ import question from './utils/question';
 
 let gameСircle = 3;
 
-export default (task, correctAnswer, taskText) => {
+export default (task, calcAnswer, taskText) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${taskText}\n`);
   const name = question('May I have your name?');
@@ -11,7 +11,7 @@ export default (task, correctAnswer, taskText) => {
 
   while (gameСircle > 0) {
     const currentTask = task();
-    const currentAnswer = correctAnswer(currentTask);
+    const currentAnswer = calcAnswer(currentTask);
 
     console.log(`Question: ${currentTask}`);
     const userAnswer = question('Your answer');
