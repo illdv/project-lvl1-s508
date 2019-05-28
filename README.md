@@ -5,8 +5,11 @@
 brain-even:
 [![asciicast](https://asciinema.org/a/oNp00MktduRhqlkWc1sFCGy2U.svg)](https://asciinema.org/a/oNp00MktduRhqlkWc1sFCGy2U)
 
-brain-calc
+brain-calc:
 [![asciicast](https://asciinema.org/a/Hjtkm1GIDHay9loEKtmhnMjIM.svg)](https://asciinema.org/a/Hjtkm1GIDHay9loEKtmhnMjIM)
 
-brain-gcd 
+brain-gcd:
 [![asciicast](https://asciinema.org/a/aua0cxeBDW9IwGafaTOQzkJot.svg)](https://asciinema.org/a/aua0cxeBDW9IwGafaTOQzkJot)
+
+brain-progression:
+[![asciicast](https://asciinema.org/a/X4s694uk01H3hretUMWifUWt4.svg)](https://asciinema.org/a/X4s694uk01H3hretUMWifUWt4)

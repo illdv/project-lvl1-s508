@@ -2,7 +2,7 @@ import question from './utils/question';
 
 let gameСircle = 3;
 
-export default (task, calcAnswer, taskText) => {
+export default (taskData, taskText) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${taskText}\n`);
   const name = question('May I have your name?');
@@ -10,14 +10,13 @@ export default (task, calcAnswer, taskText) => {
 
 
   while (gameСircle > 0) {
-    const currentTask = task();
-    const currentAnswer = calcAnswer(currentTask);
+    const { taskBody, correctAnswer } = taskData();
 
-    console.log(`Question: ${currentTask}`);
+    console.log(`Question: ${taskBody}`);
     const userAnswer = question('Your answer');
-    const isRightAnswer = userAnswer === currentAnswer;
+    const isRightAnswer = userAnswer === correctAnswer;
     if (!isRightAnswer) {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${currentAnswer}.`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
       break;
     }
     gameСircle -= 1;

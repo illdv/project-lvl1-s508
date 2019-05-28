@@ -1,15 +1,16 @@
-import randomInteger from '../utils/randomInteger';
-import normalizeAnswer from '../utils/normalizeAnswer';
+import { randInteger } from '../utils/randomization';
 import flow from '../flow';
 
 const minInteger = 1;
 const maxInteger = 20;
 
-const task = () => randomInteger(minInteger, maxInteger);
-
-const calcAnswer = n => (normalizeAnswer(n) % 2 === 0 ? 'yes' : 'no');
+const taskData = () => {
+  const taskBody = randInteger(minInteger, maxInteger);
+  const correctAnswer = taskBody % 2 === 0 ? 'yes' : 'no';
+  return { taskBody, correctAnswer };
+};
 
 
 const taskText = 'Answer "yes" if number even otherwise answer "no"';
 
-export default () => flow(task, calcAnswer, taskText);
+export default () => flow(taskData, taskText);

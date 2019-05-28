@@ -1,19 +1,22 @@
-import randomInteger from '../utils/randomInteger';
-import normalizeAnswer from '../utils/normalizeAnswer';
+import { randInteger } from '../utils/randomization';
+// import normalizeAnswer from '../utils/normalizeAnswer';
 import flow from '../flow';
 
 const minInteger = 1;
 const maxInteger = 50;
 
-const task = () => `${randomInteger(minInteger, maxInteger)} ${randomInteger(minInteger, maxInteger)}`;
+const calcAnswer = (a, b) => (!b ? `${a}` : calcAnswer(b, a % b));
 
-const calcAnswer = (taskValue) => {
-  const [firstOperand, secondOperand] = normalizeAnswer(taskValue);
-  const calc = (a, b) => (!b ? `${a}` : calc(b, a % b));
-  return calc(firstOperand, secondOperand);
+
+const taskData = () => {
+  const firstOperand = randInteger(minInteger, maxInteger);
+  const secondOperand = randInteger(minInteger, maxInteger);
+  const taskBody = `${firstOperand} ${secondOperand}`;
+  const correctAnswer = calcAnswer(firstOperand, secondOperand);
+  return { taskBody, correctAnswer };
 };
 
 
 const taskText = 'Find the greatest common divisor of given numbers.';
 
-export default () => flow(task, calcAnswer, taskText);
+export default () => flow(taskData, taskText);
