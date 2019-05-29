@@ -1,9 +1,8 @@
 import { randInteger } from '../utils/randomization';
-// import normalizeAnswer from '../utils/normalizeAnswer';
 import flow from '../flow';
 
 const minInteger = 1;
-const maxInteger = 50;
+const maxInteger = 10;
 
 const calcAnswer = (a, b) => (!b ? `${a}` : calcAnswer(b, a % b));
 

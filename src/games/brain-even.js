@@ -4,9 +4,11 @@ import flow from '../flow';
 const minInteger = 1;
 const maxInteger = 20;
 
+const calcAnswer = taskValue => (taskValue % 2 === 0 ? 'yes' : 'no');
+
 const taskData = () => {
   const taskBody = randInteger(minInteger, maxInteger);
-  const correctAnswer = taskBody % 2 === 0 ? 'yes' : 'no';
+  const correctAnswer = calcAnswer(taskBody);
   return { taskBody, correctAnswer };
 };
 
