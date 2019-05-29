@@ -1,8 +1,7 @@
 {
-  "name": "brain-even",
+  "name": "brain-games",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "first Hexlet project",
   "bin": {
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
@@ -12,6 +11,14 @@
   },
   "files": [
     "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/illdv/project-lvl1-s508"
+  },
+  "keywords": [
+    "Brain games",
+    "learn project"
   ],
   "scripts": {
     "start": "npx babel-node src/bin/brain-prime.js",

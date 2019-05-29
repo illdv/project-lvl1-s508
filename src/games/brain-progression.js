@@ -15,7 +15,7 @@ const createProgression = (startEl, step, acc = []) => {
 
 const taskData = () => {
   const startProg = randInteger(minInteger, maxInteger);
-  const stepProg = randInteger(1, 5);
+  const stepProg = randInteger(minInteger, maxInteger / 10);
   const arrProg = createProgression(startProg, stepProg);
   const hideIndex = randIndex(arrProg);
   const correctAnswer = `${arrProg[hideIndex]}`;
