@@ -2,9 +2,9 @@ import readlineSync from 'readline-sync';
 
 const roundGame = 3;
 
-export default (taskData, taskText) => {
+export default (getTaskData, description) => {
   console.log('Welcome to the Brain Games!');
-  console.log(`${taskText}\n`);
+  console.log(`${description}\n`);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
@@ -13,8 +13,8 @@ export default (taskData, taskText) => {
       console.log(`Congratulations, ${name}!`);
       return;
     }
-    const { taskBody, correctAnswer } = taskData();
-    console.log(`Question: ${taskBody}`);
+    const { question, correctAnswer } = getTaskData();
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     const isRightAnswer = userAnswer === correctAnswer;
     if (!isRightAnswer) {

@@ -1,4 +1,4 @@
-import { randInteger } from '../utils/randomization';
+import random  from '../utils/randomization';
 import flow from '../flow';
 
 const minInteger = 1;
@@ -20,13 +20,13 @@ const isPrime = (number, acc = 2) => {
   return isPrime(number, acc + 1);
 };
 
-const taskData = () => {
-  const taskBody = randInteger(minInteger, maxInteger);
-  const correctAnswer = isPrime(taskBody);
-  return { taskBody, correctAnswer };
+const getTaskData = () => {
+  const question = random(minInteger, maxInteger);
+  const correctAnswer = isPrime(question);
+  return { question, correctAnswer };
 };
 
 
-const taskText = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
-export default () => flow(taskData, taskText);
+export default () => flow(getTaskData, description);
