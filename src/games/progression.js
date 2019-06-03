@@ -3,26 +3,26 @@ import flow from '../flow';
 
 const minInteger = 1;
 const maxInteger = 50;
-const lengthProg = 10;
+const progressionLength = 10;
 
 
-const createProgression = (startEl, step, acc = []) => {
-  if (acc.length >= lengthProg) {
+const createProgression = (element, step, acc = []) => {
+  if (acc.length >= progressionLength) {
     return acc;
   }
-  return createProgression(startEl + step, step, acc.concat(startEl));
+  return createProgression(element + step, step, acc.concat(element));
 };
 
 const getTaskData = () => {
-  const startProg = random(minInteger, maxInteger);
-  const stepProg = random(minInteger, maxInteger / 10);
-  const arrProg = createProgression(startProg, stepProg);
+  const initElement = random(minInteger, maxInteger);
+  const stepProgression = random(minInteger, maxInteger / 10);
+  const progressionList = createProgression(initElement, stepProgression);
   const startIndex = 0;
-  const endIndex = arrProg.length -1
-  const hideIndex = random(startIndex, endIndex);
-  const correctAnswer = `${arrProg[hideIndex]}`;
-  arrProg[hideIndex] = '..';
-  const question = arrProg.join(' ');
+  const endIndex = progressionList.length - 1;
+  const hidenIndex = random(startIndex, endIndex);
+  const correctAnswer = `${progressionList[hidenIndex]}`;
+  progressionList[hidenIndex] = '..';
+  const question = progressionList.join(' ');
   return { question, correctAnswer };
 };
 

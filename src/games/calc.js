@@ -1,4 +1,4 @@
-import random  from '../utils/randomization';
+import random from '../utils/randomization';
 
 import flow from '../flow';
 
@@ -9,25 +9,27 @@ const maxInteger = 10;
 const getTaskData = () => {
   const firstOperand = random(minInteger, maxInteger);
   const secondOperand = random(minInteger, maxInteger);
-  const variants = [
+  const Expressions = [
     {
-      correctAnswer: `${firstOperand + secondOperand}`,
-      question: `${firstOperand} + ${secondOperand}`,
+      calcExpression: (firstArg, secondtArg) => `${firstArg + secondtArg}`,
+      operation: '+',
     },
     {
-      correctAnswer: `${firstOperand - secondOperand}`,
-      question: `${firstOperand} - ${secondOperand}`,
+      calcExpression: (firstArg, secondtArg) => `${firstArg - secondtArg}`,
+      operation: '-',
 
     },
     {
-      correctAnswer: `${firstOperand * secondOperand}`,
-      question: `${firstOperand} * ${secondOperand}`,
+      calcExpression: (firstArg, secondtArg) => `${firstArg * secondtArg}`,
+      operation: '*',
     },
   ];
-  const startIndex = 0
-  const endIndex = variants.length-1
+  const startIndex = 0;
+  const endIndex = Expressions.length - 1;
   const currectIndex = random(startIndex, endIndex);
-  const { question, correctAnswer } = variants[currectIndex];
+  const { operation, calcExpression } = Expressions[currectIndex];
+  const question = `${firstOperand} ${operation} ${secondOperand}`;
+  const correctAnswer = calcExpression(firstOperand, secondOperand);
   return { question, correctAnswer };
 };
 

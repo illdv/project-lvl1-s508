@@ -1,17 +1,17 @@
-import random  from '../utils/randomization';
+import random from '../utils/randomization';
 import flow from '../flow';
 
 const minInteger = 1;
 const maxInteger = 10;
 
-const calcAnswer = (a, b) => (!b ? `${a}` : calcAnswer(b, a % b));
+const calcGcd = (a, b) => (!b ? `${a}` : calcGcd(b, a % b));
 
 
 const getTaskData = () => {
   const firstOperand = random(minInteger, maxInteger);
   const secondOperand = random(minInteger, maxInteger);
   const question = `${firstOperand} ${secondOperand}`;
-  const correctAnswer = calcAnswer(firstOperand, secondOperand);
+  const correctAnswer = calcGcd(firstOperand, secondOperand);
   return { question, correctAnswer };
 };
 

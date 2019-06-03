@@ -1,4 +1,4 @@
-import random  from '../utils/randomization';
+import random from '../utils/randomization';
 import flow from '../flow';
 
 const minInteger = 1;

@@ -5,6 +5,7 @@ start:
 	npm start
 
 publish:
+	rm -rf dist
 	npm publish  --dry-run
 
 lint:

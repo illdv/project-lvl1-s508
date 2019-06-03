@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const roundGame = 3;
+const roundsCount = 3;
 
 export default (getTaskData, description) => {
   console.log('Welcome to the Brain Games!');
@@ -8,22 +8,21 @@ export default (getTaskData, description) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
 
-  const circleGame = (circle) => {
-    if (circle < 1) {
+  const iter = (count) => {
+    if (count < 1) {
       console.log(`Congratulations, ${name}!`);
       return;
     }
     const { question, correctAnswer } = getTaskData();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    const isRightAnswer = userAnswer === correctAnswer;
-    if (!isRightAnswer) {
+    if (userAnswer !== correctAnswer) {
       console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
       return;
     }
     console.log('Correct!');
-    circleGame(circle - 1);
+    iter(count - 1);
   };
 
-  circleGame(roundGame);
+  iter(roundsCount);
 };

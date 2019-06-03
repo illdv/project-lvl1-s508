@@ -1,28 +1,35 @@
-import random  from '../utils/randomization';
+import random from '../utils/randomization';
 import flow from '../flow';
 
 const minInteger = 1;
 const maxInteger = 10;
 
 
-const isPrime = (number, acc = 2) => {
-  const numberHalf = Math.floor(number / 2);
+const isPrime = (number) => {
   if (number < 2) {
-    return 'no';
-  } if (number === 2 || acc > numberHalf) {
-    return 'yes';
+    return false;
   }
-  if (number % acc === 0) {
-    return 'no';
+  if (number === 2) {
+    return true;
   }
+  const numberHalf = Math.floor(number / 2);
 
+  const iter = (acc) => {
+    if (acc > numberHalf) {
+      return true;
+    }
+    if (number % acc === 0) {
+      return false;
+    }
+    return iter(acc + 1);
+  };
 
-  return isPrime(number, acc + 1);
+  return iter(2);
 };
 
 const getTaskData = () => {
   const question = random(minInteger, maxInteger);
-  const correctAnswer = isPrime(question);
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return { question, correctAnswer };
 };
 
