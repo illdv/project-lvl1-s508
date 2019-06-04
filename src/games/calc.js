@@ -9,27 +9,26 @@ const maxInteger = 10;
 const getTaskData = () => {
   const firstOperand = random(minInteger, maxInteger);
   const secondOperand = random(minInteger, maxInteger);
-  const Expressions = [
+  const expressions = [
     {
-      calcExpression: (firstArg, secondtArg) => `${firstArg + secondtArg}`,
       operation: '+',
+      calculateExpression: (firstArg, secondtArg) => `${firstArg + secondtArg}`,
     },
     {
-      calcExpression: (firstArg, secondtArg) => `${firstArg - secondtArg}`,
       operation: '-',
+      calcExpression: (firstArg, secondtArg) => `${firstArg - secondtArg}`,
 
     },
     {
-      calcExpression: (firstArg, secondtArg) => `${firstArg * secondtArg}`,
       operation: '*',
+      calcExpression: (firstArg, secondtArg) => `${firstArg * secondtArg}`,
     },
   ];
-  const startIndex = 0;
-  const endIndex = Expressions.length - 1;
-  const currectIndex = random(startIndex, endIndex);
-  const { operation, calcExpression } = Expressions[currectIndex];
+
+  const currectIndex = random(0, expressions.length - 1);
+  const { operation, calculateExpression } = expressions[currectIndex];
   const question = `${firstOperand} ${operation} ${secondOperand}`;
-  const correctAnswer = calcExpression(firstOperand, secondOperand);
+  const correctAnswer = calculateExpression(firstOperand, secondOperand);
   return { question, correctAnswer };
 };
 

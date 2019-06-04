@@ -12,10 +12,9 @@ const isPrime = (number) => {
   if (number === 2) {
     return true;
   }
-  const numberHalf = Math.floor(number / 2);
 
   const iter = (acc) => {
-    if (acc > numberHalf) {
+    if (acc > Math.floor(number / 2)) {
       return true;
     }
     if (number % acc === 0) {

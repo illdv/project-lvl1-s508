@@ -4,14 +4,14 @@ import flow from '../flow';
 const minInteger = 1;
 const maxInteger = 10;
 
-const calcGcd = (a, b) => (!b ? `${a}` : calcGcd(b, a % b));
+const findGcd = (a, b) => (!b ? `${a}` : findGcd(b, a % b));
 
 
 const getTaskData = () => {
-  const firstOperand = random(minInteger, maxInteger);
-  const secondOperand = random(minInteger, maxInteger);
-  const question = `${firstOperand} ${secondOperand}`;
-  const correctAnswer = calcGcd(firstOperand, secondOperand);
+  const firstNum = random(minInteger, maxInteger);
+  const secondNum = random(minInteger, maxInteger);
+  const question = `${firstNum} ${secondNum}`;
+  const correctAnswer = findGcd(firstNum, secondNum);
   return { question, correctAnswer };
 };
 

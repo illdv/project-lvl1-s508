@@ -6,7 +6,7 @@ const maxInteger = 50;
 const progressionLength = 10;
 
 
-const createProgression = (element, step, acc = []) => {
+const createProgression = (element, step, acc) => {
   if (acc.length >= progressionLength) {
     return acc;
   }
@@ -15,14 +15,13 @@ const createProgression = (element, step, acc = []) => {
 
 const getTaskData = () => {
   const initElement = random(minInteger, maxInteger);
-  const stepProgression = random(minInteger, maxInteger / 10);
-  const progressionList = createProgression(initElement, stepProgression);
-  const startIndex = 0;
-  const endIndex = progressionList.length - 1;
-  const hidenIndex = random(startIndex, endIndex);
-  const correctAnswer = `${progressionList[hidenIndex]}`;
-  progressionList[hidenIndex] = '..';
-  const question = progressionList.join(' ');
+  const progressionStep = random(minInteger, maxInteger / 10);
+  const progressionInit = [];
+  const progression = createProgression(initElement, progressionStep, progressionInit);
+  const indexHiddenElement = random(0, progression.length - 1);
+  const correctAnswer = `${progression[indexHiddenElement]}`;
+  progression[indexHiddenElement] = '..';
+  const question = progression.join(' ');
   return { question, correctAnswer };
 };
 
