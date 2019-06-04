@@ -14,11 +14,11 @@ const isPrime = (number) => {
   }
 
   const iter = (acc) => {
-    if (acc > Math.floor(number / 2)) {
-      return true;
-    }
     if (number % acc === 0) {
       return false;
+    }
+    if (acc > Math.floor(number / 2)) {
+      return true;
     }
     return iter(acc + 1);
   };
