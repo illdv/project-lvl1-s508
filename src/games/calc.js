@@ -2,36 +2,33 @@ import random from '../utils/randomization';
 
 import flow from '../flow';
 
-const minInteger = 1;
-const maxInteger = 10;
-
-
 const getTaskData = () => {
+  const minInteger = 1;
+  const maxInteger = 10;
   const firstOperand = random(minInteger, maxInteger);
   const secondOperand = random(minInteger, maxInteger);
   const expressions = [
     {
       operation: '+',
-      calculateExpression: (firstArg, secondtArg) => `${firstArg + secondtArg}`,
+      calculate: (a, b) => a + b,
     },
     {
       operation: '-',
-      calcExpression: (firstArg, secondtArg) => `${firstArg - secondtArg}`,
+      calculate: (a, b) => a - b,
 
     },
     {
       operation: '*',
-      calcExpression: (firstArg, secondtArg) => `${firstArg * secondtArg}`,
+      calculate: (a, b) => a * b,
     },
   ];
 
   const currectIndex = random(0, expressions.length - 1);
-  const { operation, calculateExpression } = expressions[currectIndex];
+  const { operation, calculate } = expressions[currectIndex];
   const question = `${firstOperand} ${operation} ${secondOperand}`;
-  const correctAnswer = calculateExpression(firstOperand, secondOperand);
+  const correctAnswer = String(calculate(firstOperand, secondOperand));
   return { question, correctAnswer };
 };
-
 
 const description = 'What is the result of the expression?';
 

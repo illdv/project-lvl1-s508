@@ -1,10 +1,6 @@
 import random from '../utils/randomization';
 import flow from '../flow';
 
-const minInteger = 1;
-const maxInteger = 10;
-
-
 const isPrime = (number) => {
   if (number < 2) {
     return false;
@@ -27,11 +23,12 @@ const isPrime = (number) => {
 };
 
 const getTaskData = () => {
+  const minInteger = 1;
+  const maxInteger = 10;
   const question = random(minInteger, maxInteger);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return { question, correctAnswer };
 };
-
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 

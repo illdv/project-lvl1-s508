@@ -1,12 +1,11 @@
 import random from '../utils/randomization';
 import flow from '../flow';
 
-const minInteger = 1;
-const maxInteger = 20;
-
 const isEven = num => num % 2 === 0;
 
 const getTaskData = () => {
+  const minInteger = 1;
+  const maxInteger = 20;
   const question = random(minInteger, maxInteger);
   const correctAnswer = isEven(question) ? 'yes' : 'no';
   return { question, correctAnswer };
