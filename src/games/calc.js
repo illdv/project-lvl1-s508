@@ -10,17 +10,16 @@ const getTaskData = () => {
   const expressions = [
     {
       operation: '+',
-      calculate: (a, b) => a + b,
+      calculate: (a, b) => a + b
     },
     {
       operation: '-',
-      calculate: (a, b) => a - b,
-
+      calculate: (a, b) => a - b
     },
     {
       operation: '*',
-      calculate: (a, b) => a * b,
-    },
+      calculate: (a, b) => a * b
+    }
   ];
 
   const currectIndex = random(0, expressions.length - 1);
@@ -32,4 +31,8 @@ const getTaskData = () => {
 
 const description = 'What is the result of the expression?';
 
-export default () => flow(getTaskData, description);
+export default () =>
+  flow(
+    getTaskData,
+    description
+  );
