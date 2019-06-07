@@ -1,13 +1,13 @@
 import random from '../utils/randomization';
-
 import flow from '../flow';
 
+const minInteger = 1;
+const maxInteger = 10;
+
 const getTaskData = () => {
-  const minInteger = 1;
-  const maxInteger = 10;
   const firstOperand = random(minInteger, maxInteger);
   const secondOperand = random(minInteger, maxInteger);
-  const expressions = [
+  const operations = [
     {
       operation: '+',
       calculate: (a, b) => a + b,
@@ -23,8 +23,8 @@ const getTaskData = () => {
     },
   ];
 
-  const currectIndex = random(0, expressions.length - 1);
-  const { operation, calculate } = expressions[currectIndex];
+  const randomIndex = random(0, operations.length - 1);
+  const { operation, calculate } = operations[randomIndex];
   const question = `${firstOperand} ${operation} ${secondOperand}`;
   const correctAnswer = String(calculate(firstOperand, secondOperand));
   return { question, correctAnswer };

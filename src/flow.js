@@ -17,7 +17,7 @@ export default (getTaskData, description) => {
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== correctAnswer) {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+      console.log(`\x1b[31m'${userAnswer}'\x1b[0m is wrong answer ;(. Correct answer was \x1b[31m'${correctAnswer}'\x1b[0m.`);
       return;
     }
     console.log('Correct!');

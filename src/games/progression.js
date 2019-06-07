@@ -1,23 +1,23 @@
 import random from '../utils/randomization';
 import flow from '../flow';
 
-const create = (element, step, acc) => {
-  const progressionLength = 10;
-  if (acc.length >= progressionLength) {
+const buildProgression = (element, acc, step, length) => {
+  if (acc.length >= length) {
     return acc;
   }
-  return create(element + step, step, acc.concat(element));
+  return buildProgression(element + step, acc.concat(element), step, length);
 };
 
+const minInteger = 1;
+const maxInteger = 50;
+const progressionLength = 10;
+
 const getTaskData = () => {
-  const minInteger = 1;
-  const maxInteger = 50;
   const initElement = random(minInteger, maxInteger);
   const step = random(minInteger, maxInteger / 10);
-  const init = [];
-  const progression = create(initElement, step, init);
+  const progression = buildProgression(initElement, [], step, progressionLength);
   const hiddenElementIndex = random(0, progression.length - 1);
-  const correctAnswer = `${progression[hiddenElementIndex]}`;
+  const correctAnswer = progression[hiddenElementIndex].toString();
   progression[hiddenElementIndex] = '..';
   const question = progression.join(' ');
   return { question, correctAnswer };

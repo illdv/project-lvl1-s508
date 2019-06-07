@@ -22,9 +22,10 @@ const isPrime = (number) => {
   return iter(2);
 };
 
+const minInteger = 1;
+const maxInteger = 10;
+
 const getTaskData = () => {
-  const minInteger = 1;
-  const maxInteger = 10;
   const question = random(minInteger, maxInteger);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return { question, correctAnswer };
