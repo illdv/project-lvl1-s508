@@ -7,10 +7,10 @@ const minInteger = 1;
 const maxInteger = 10;
 
 const getTaskData = () => {
-  const firstNum = random(minInteger, maxInteger);
-  const secondNum = random(minInteger, maxInteger);
-  const question = `${firstNum} ${secondNum}`;
-  const correctAnswer = findGcd(firstNum, secondNum).toString();
+  const a = random(minInteger, maxInteger);
+  const b = random(minInteger, maxInteger);
+  const question = `${a} ${b}`;
+  const correctAnswer = findGcd(a, b).toString();
   return { question, correctAnswer };
 };
 

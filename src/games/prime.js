@@ -9,7 +9,6 @@ const isPrime = (number) => {
   if (number === 2) {
     return true;
   }
-
   const iter = (acc) => {
     if (number % acc === 0) {
       return false;
@@ -19,7 +18,6 @@ const isPrime = (number) => {
     }
     return iter(acc + 1);
   };
-
   return iter(2);
 };
 

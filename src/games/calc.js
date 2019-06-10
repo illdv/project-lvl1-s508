@@ -1,31 +1,33 @@
 import random from '../utils/randomization';
 import flow from '../flow';
 
+const operations = [
+  {
+    sign: '+',
+    operation: (a, b) => a + b,
+  },
+  {
+    sign: '-',
+    operation: (a, b) => a - b,
+  },
+  {
+    sign: '*',
+    operation: (a, b) => a * b,
+  },
+];
+
 const minInteger = 1;
 const maxInteger = 10;
 
 const getTaskData = () => {
   const firstOperand = random(minInteger, maxInteger);
   const secondOperand = random(minInteger, maxInteger);
-  const operations = [
-    {
-      operation: '+',
-      calculate: (a, b) => a + b,
-    },
-    {
-      operation: '-',
-      calculate: (a, b) => a - b,
-    },
-    {
-      operation: '*',
-      calculate: (a, b) => a * b,
-    },
-  ];
+
 
   const randomIndex = random(0, operations.length - 1);
-  const { operation, calculate } = operations[randomIndex];
-  const question = `${firstOperand} ${operation} ${secondOperand}`;
-  const correctAnswer = calculate(firstOperand, secondOperand).toString();
+  const { sign, operation } = operations[randomIndex];
+  const question = `${firstOperand} ${sign} ${secondOperand}`;
+  const correctAnswer = operation(firstOperand, secondOperand).toString();
   return { question, correctAnswer };
 };
 
