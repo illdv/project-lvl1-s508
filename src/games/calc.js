@@ -25,7 +25,7 @@ const getTaskData = () => {
   const randomIndex = random(0, operations.length - 1);
   const { operation, calculate } = operations[randomIndex];
   const question = `${firstOperand} ${operation} ${secondOperand}`;
-  const correctAnswer = String(calculate(firstOperand, secondOperand));
+  const correctAnswer = calculate(firstOperand, secondOperand).toString();
   return { question, correctAnswer };
 };
 
