@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import getRedColor from './utils/colors';
 
 const roundsCount = 3;
 
@@ -16,10 +17,16 @@ export default (getTaskData, description) => {
     const { question, correctAnswer } = getTaskData();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
+
     if (userAnswer !== correctAnswer) {
-      console.log(`\x1b[31m'${userAnswer}'\x1b[0m is wrong answer ;(. Correct answer was \x1b[31m'${correctAnswer}'\x1b[0m.`);
+      console.log(`${getRedColor(`'${userAnswer}'`)}`
+      + ' is wrong answer ;(. Correct answer was '
+      + `${getRedColor(`'${correctAnswer}'`)}.`);
+
+      console.log(`Let${getRedColor(`'s try again, ${name}!`)}`);
       return;
     }
+
     console.log('Correct!');
     iter(count - 1);
   };

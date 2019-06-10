@@ -1,5 +1,6 @@
 import random from '../utils/randomization';
 import flow from '../flow';
+import getRedColor from '../utils/colors';
 
 const isEven = num => num % 2 === 0;
 
@@ -12,6 +13,6 @@ const getTaskData = () => {
   return { question, correctAnswer };
 };
 
-const description = 'Answer "yes" if number even otherwise answer "no"';
+const description = `Answer ${getRedColor('"yes"')} if number even otherwise answer ${getRedColor('"no"')}`;
 
 export default () => flow(getTaskData, description);
