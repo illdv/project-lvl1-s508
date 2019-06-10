@@ -1,7 +1,7 @@
 import random from '../utils/randomization';
 import flow from '../flow';
 
-const findGcd = (a, b) => (!b ? `${a}` : findGcd(b, a % b));
+const findGcd = (a, b) => (!b ? a : findGcd(b, a % b));
 
 const minInteger = 1;
 const maxInteger = 10;
@@ -10,7 +10,7 @@ const getTaskData = () => {
   const firstNum = random(minInteger, maxInteger);
   const secondNum = random(minInteger, maxInteger);
   const question = `${firstNum} ${secondNum}`;
-  const correctAnswer = findGcd(firstNum, secondNum);
+  const correctAnswer = findGcd(firstNum, secondNum).toString();
   return { question, correctAnswer };
 };
 
