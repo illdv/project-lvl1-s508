@@ -22,8 +22,6 @@ const maxInteger = 10;
 const getTaskData = () => {
   const firstOperand = random(minInteger, maxInteger);
   const secondOperand = random(minInteger, maxInteger);
-
-
   const randomIndex = random(0, operations.length - 1);
   const { sign, operation } = operations[randomIndex];
   const question = `${firstOperand} ${sign} ${secondOperand}`;
@@ -33,4 +31,7 @@ const getTaskData = () => {
 
 const description = 'What is the result of the expression?';
 
-export default () => flow(getTaskData, description);
+export default () => flow(
+  getTaskData,
+  description,
+);

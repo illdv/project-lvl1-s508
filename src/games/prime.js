@@ -30,6 +30,11 @@ const getTaskData = () => {
   return { question, correctAnswer };
 };
 
-const description = `Answer ${getRedColor('"yes"')} if given number is prime. Otherwise answer ${getRedColor('"no"')}`;
+const description = `Answer ${getRedColor(
+  '"yes"',
+)} if given number is prime. Otherwise answer ${getRedColor('"no"')}`;
 
-export default () => flow(getTaskData, description);
+export default () => flow(
+  getTaskData,
+  description,
+);

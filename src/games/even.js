@@ -13,6 +13,11 @@ const getTaskData = () => {
   return { question, correctAnswer };
 };
 
-const description = `Answer ${getRedColor('"yes"')} if number even otherwise answer ${getRedColor('"no"')}`;
+const description = `Answer ${getRedColor(
+  '"yes"',
+)} if number even otherwise answer ${getRedColor('"no"')}`;
 
-export default () => flow(getTaskData, description);
+export default () => flow(
+  getTaskData,
+  description,
+);
