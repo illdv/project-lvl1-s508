@@ -16,7 +16,4 @@ const getTaskData = () => {
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-export default () => flow(
-  getTaskData,
-  description,
-);
+export default () => flow(getTaskData, description);

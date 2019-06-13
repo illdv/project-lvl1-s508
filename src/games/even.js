@@ -17,7 +17,4 @@ const description = `Answer ${getRedColor(
   '"yes"',
 )} if number even otherwise answer ${getRedColor('"no"')}`;
 
-export default () => flow(
-  getTaskData,
-  description,
-);
+export default () => flow(getTaskData, description);

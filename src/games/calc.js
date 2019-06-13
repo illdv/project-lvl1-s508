@@ -31,7 +31,4 @@ const getTaskData = () => {
 
 const description = 'What is the result of the expression?';
 
-export default () => flow(
-  getTaskData,
-  description,
-);
+export default () => flow(getTaskData, description);

@@ -28,7 +28,4 @@ const getTaskData = () => {
 
 const description = 'What number is missing in the progression?';
 
-export default () => flow(
-  getTaskData,
-  description,
-);
+export default () => flow(getTaskData, description);

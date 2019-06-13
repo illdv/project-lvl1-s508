@@ -19,13 +19,8 @@ export default (getTaskData, description) => {
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer !== correctAnswer) {
-      console.log(
-        `${getRedColor(
-          `'${userAnswer}'`,
-        )} is wrong answer ;(. Correct answer was ${getRedColor(
-          `'${correctAnswer}'`,
-        )}.`,
-      );
+      console.log(`${getRedColor(`'${userAnswer}'`)} is wrong answer ;(.`);
+      console.log(`Correct answer was ${getRedColor(`'${correctAnswer}'`)}.`);
       console.log(`Let${getRedColor(`'s try again, ${name}!`)}`);
       return;
     }
